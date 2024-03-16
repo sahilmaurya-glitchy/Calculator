@@ -42,7 +42,13 @@ function backspace() {
   str = input.value;
   if (str === "Invaild") {
     str = "";
-    input.value = str;
+    inputElement.value = str;
+  } else if (str === "undefined") {
+    str = "";
+    inputElement.value = str;
+  } else if (str === "Infinity") {
+    str = "";
+    inputElement.value = str;
   } else {
     str = str.slice(0, -1);
     inputElement.value = str;
