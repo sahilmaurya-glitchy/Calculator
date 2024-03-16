@@ -10,7 +10,8 @@ function appendToInput(value) {
     value === "-" ||
     value === "+" ||
     value === "/" ||
-    value === "%"
+    value === "%" ||
+    value === "."
   ) {
     let lastOperator = input.value.slice(-1);
     if (
@@ -18,7 +19,8 @@ function appendToInput(value) {
       lastOperator === "-" ||
       lastOperator === "*" ||
       lastOperator === "/" ||
-      lastOperator === "%"
+      lastOperator === "%" ||
+      lastOperator === "."
     ) {
       str = str.slice(0, -1);
       inputElement.value = str;
@@ -162,7 +164,7 @@ document.addEventListener("keyup", (e) => {
     let keyPressed = e.key;
     if (
       isFinite(keyPressed) ||
-      ["+", "-", "*", "/", "%"].includes(keyPressed)
+      ["+", "-", "*", "/", "%", "."].includes(keyPressed)
     ) {
       // Logic for handle one arthemetic in sequence
       let lastOperator = input.value.slice(-1);
@@ -171,7 +173,8 @@ document.addEventListener("keyup", (e) => {
         keyPressed === "*" ||
         keyPressed === "-" ||
         keyPressed === "+" ||
-        keyPressed === "%"
+        keyPressed === "%" ||
+        keyPressed === "."
       ) {
         str = inputElement.value;
         str += keyPressed;
@@ -181,7 +184,8 @@ document.addEventListener("keyup", (e) => {
           lastOperator === "-" ||
           lastOperator === "*" ||
           lastOperator === "/" ||
-          lastOperator === "%"
+          lastOperator === "%" ||
+          lastOperator === "."
         ) {
           let str = inputElement.value;
           str = str.slice(0, -2) + keyPressed;
